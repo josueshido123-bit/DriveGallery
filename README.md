@@ -1,5 +1,7 @@
 # Drive Gallery
 
+THIS WAS MADE FOR PERSONAL USE
+
 A client-side gallery for media stored in a Google Drive folder. It can run locally or as a public static site through GitHub Pages.
 
 ## Run locally
