@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drive Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=2" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">LOCAL DRIVE EXPERIENCE</p>
+          <h1>Drive Gallery</h1>
+          <p class="subtitle">A polished, Netflix-inspired gallery for your Google Drive media.</p>
+        </div>
+        <div class="toolbar">
+          <label class="field">
+            <span>Google client ID</span>
+            <input id="clientIdInput" type="text" placeholder="YOUR_CLIENT_ID.apps.googleusercontent.com" />
+          </label>
+          <label class="field">
+            <span>Redirect URI</span>
+            <input id="redirectUriInput" type="text" placeholder="http://localhost:3000/" />
+          </label>
+          <label class="field">
+            <span>Folder ID or URL</span>
+            <input id="folderInput" type="text" placeholder="Paste a Drive folder ID or share link" />
+          </label>
+          <button id="connectBtn" class="primary">Connect Drive</button>
+          <button id="pickFolderBtn" class="secondary">Pick Folder</button>
+          <button id="shuffleBtn" class="secondary">Shuffle</button>
+          <button id="slideshowBtn" class="secondary">Start Slideshow</button>
+          <label class="field compact">
+            <span>Layout</span>
+            <select id="layoutSelect" class="fancy-select">
+              <option value="grid">Grid</option>
+              <option value="masonry">Masonry</option>
+              <option value="list">List</option>
+              <option value="rows">Rows</option>
+              <option value="mosaic">Mosaic</option>
+            </select>
+          </label>
+          <label class="field compact">
+            <span>Theme</span>
+            <select id="themeSelect" class="fancy-select">
+              <option value="midnight">Midnight</option>
+              <option value="blackout">Blackout</option>
+              <option value="aurora">Aurora</option>
+              <option value="rose">Rose</option>
+              <option value="emerald">Emerald</option>
+              <option value="solar">Solar</option>
+            </select>
+          </label>
+        </div>
+      </header>
+
+      <section class="info-banner">
+        <div>
+          <strong>How it works</strong>
+          <p>Sign in to Google Drive, pick a folder, then browse your media in a cinematic gallery. For private Drive folders, your Google account must be allowed by the OAuth app or the app must be fully verified.</p>
+        </div>
+        <div class="status-stack">
+          <div class="status-pill" id="statusText">Ready to connect</div>
+          <div class="progress-track" aria-hidden="true">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-banner debug-banner" style="margin-top: 0.75rem;">
+        <div>
+          <strong>Drive debug</strong>
+          <p id="debugText">Waiting for Drive response…</p>
+        </div>
+      </section>
+
+      <main class="gallery-panel">
+        <div id="gallery" class="gallery grid"></div>
+      </main>
+    </div>
+
+    <div id="statusCat" class="status-cat" aria-live="polite" aria-hidden="true">
+      <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Loading cat" />
+    </div>
+
+    <div id="viewerOverlay" class="viewer-overlay" aria-hidden="true">
+      <div class="viewer-card">
+        <button id="closeViewerBtn" class="icon-btn" aria-label="Close viewer">×</button>
+        <div class="viewer-body" id="viewerBody"></div>
+        <div class="viewer-controls">
+          <button id="prevBtn" class="secondary">← Prev</button>
+          <button id="playPauseBtn" class="secondary">Pause</button>
+          <button id="nextBtn" class="secondary">Next →</button>
+          <button id="exitSlideshowBtn" class="secondary">Exit slideshow</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./gallery-utils.js?v=2"></script>
+    <script src="./app.js?v=2"></script>
+  </body>
+</html>
