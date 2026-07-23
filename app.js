@@ -293,7 +293,7 @@ async function connectDrive() {
         client_id: clientId,
         scope: 'https://www.googleapis.com/auth/drive.readonly',
         include_granted_scopes: true,
-        prompt: 'consent',
+        prompt: 'select_account',
         callback: async (response) => {
           if (response.error) {
             const message = response.error === 'access_denied'
