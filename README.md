@@ -2,16 +2,6 @@
 
 A client-side gallery for media stored in a Google Drive folder. It can run locally or as a public static site through GitHub Pages.
 
-## Publish with GitHub Pages
-
-1. Push this repository to GitHub using the `main` branch.
-2. Open the repository's **Settings > Pages** page.
-3. Set **Source** to **GitHub Actions**.
-4. Push a commit or run the **Deploy Drive Gallery to GitHub Pages** workflow manually from the **Actions** tab.
-5. Open the Pages URL shown by GitHub, usually `https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/`.
-
-The included workflow publishes the static files directly. No server or API key is stored in the repository.
-
 ## Run locally
 
 1. Open the folder in a browser, or serve it locally:
